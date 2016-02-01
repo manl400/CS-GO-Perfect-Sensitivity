@@ -385,7 +385,7 @@ public class Client extends JFrame implements ClipboardOwner {
 		mntmAbout = new JMenuItem("About");
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Made by Zain Ashraf\n"
+				JOptionPane.showMessageDialog(null, "Made by Manl400\n"
 						+ "Based on /u/mr_sneakyTV at: http://bit.ly/1SmNQfY",
 						"About", JOptionPane.INFORMATION_MESSAGE);
 			}
