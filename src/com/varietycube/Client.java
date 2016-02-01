@@ -210,8 +210,8 @@ public class Client extends JFrame implements ClipboardOwner {
 				if (selectedOption == JOptionPane.YES_OPTION) {
 					setClipboard("sensitivity " + String.valueOf(df2.format(avg)));
 					lblStatus.setText("Status: The average value (" + df2.format(avg) + ") + command copied");
-					JOptionPane.showMessageDialog(null, "Congratulations, You've found your perfect sensitvity in " + timesRan + " trys!\n"
-							+ "The average value (" + df2.format(avg) + "), aswell as the command, has been copied to your clipboard.", 
+					JOptionPane.showMessageDialog(null, "Congratulations, you've found your perfect sensitvity in " + timesRan + " tries!\n"
+							+ "The average value (" + df2.format(avg) + "), as well as the command, has been copied to your clipboard.", 
 							"Congratulations", JOptionPane.INFORMATION_MESSAGE);
 					highField.setText("");
 					lowField.setText("");
@@ -301,8 +301,8 @@ public class Client extends JFrame implements ClipboardOwner {
 							lowField.setText(String.valueOf(Double.valueOf(df2.format(low))));
 							avgField.setText(String.valueOf(Double.valueOf(df2.format(avg))));
 							highField.setText(String.valueOf(Double.valueOf(df2.format(high))));
-							lblStatus.setText("Status: Try " + timesRan + "!");
 						}
+						lblStatus.setText("Status: Try " + timesRan + "!");
 					}
 				} catch(Exception ex) {
 					
@@ -365,16 +365,17 @@ public class Client extends JFrame implements ClipboardOwner {
 		mntmHowToUse = new JMenuItem("How to use?");
 		mntmHowToUse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "1. Find the sensitivity that completes a 360 moving your mouse across your mousepad from one end to the other.\n"
+				JOptionPane.showMessageDialog(null, "1. Find the sensitivity that completes a 360 moving your mouse across your mouse pad from one end to the other.\n"
 						+ "2. Put that into the starting/avg text field and click 'Start'.\n"
-						+ "3. The program will calculate a low and high senstivity based on your starting senstivity, click the text box to copy the senstivity\n"
-						+ "and the command. Now test that senstivity by strafing while keeping your crosshair on a fixed target. Switch between the low and high to\n"
+						+ "3. The program will calculate a low and high sensitivity based on your starting sensitivity, click the text box to copy the sensitivity\n"
+						+ "and the command. Now test that sensitivity by strafing while keeping your crosshair on a fixed target. Switch between the low and high to\n"
 						+ "test them both.\n"
 						+ "4. Choose the one that most lets you stick on the fixed target, not always the highest, by clicking the checkbox then clicking 'Continue'.\n"
-						+ "The program will calculate your new high and low ready to be tested again. As you get more and more into your trys, the modifer gets closer\n"
+						+ "The program will calculate your new high and low ready to be tested again. As you get more and more into your tries, the modifier gets closer\n"
 						+ "to one, making for finer adjustments.\n"
-						+ "5. Keep repeating till you can't see a noticable difference with either the high or low setting. Then press 'Finish'. This will copy the.\n"
+						+ "5. Keep repeating till you can't see a noticeable difference with either the high or low setting. Then press 'Finish'. This will copy the.\n"
 						+ "average value of the high and low and the command to be put into game.\n"
+
 						+ "\n"
 						+ "For more information go to: http://bit.ly/1SmNQfY", 
 						"How to use?", JOptionPane.INFORMATION_MESSAGE);
