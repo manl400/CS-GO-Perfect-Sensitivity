@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS:GO Sensitivity Finder</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>CS:GO Sensitivity Finder</h1>
+      <p class="tagline">A web version of the original desktop helper for perfecting your aim.</p>
+    </header>
+
+    <section class="card">
+      <h2>1. Enter a starting/average sensitivity</h2>
+      <div class="field-group">
+        <label for="avg-input">Starting / Average</label>
+        <input id="avg-input" type="number" min="0" step="0.00001" placeholder="e.g. 1.2" />
+      </div>
+      <div class="actions">
+        <button id="start-btn" class="primary">Start</button>
+        <button id="reset-btn" class="ghost" disabled>Reset</button>
+      </div>
+      <p class="hint">Tip: Use the sensitivity that lets you perform a full 360° swipe across your mouse pad.</p>
+    </section>
+
+    <section class="card">
+      <h2>2. Test the suggested sensitivities</h2>
+      <div class="columns">
+        <div class="field-group">
+          <label for="low-field">Low</label>
+          <div class="input-copy">
+            <input id="low-field" type="text" readonly />
+            <button class="copy-btn" data-target="low-field" disabled>Copy command</button>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="avg-field">Average</label>
+          <input id="avg-field" type="text" readonly />
+        </div>
+        <div class="field-group">
+          <label for="high-field">High</label>
+          <div class="input-copy">
+            <input id="high-field" type="text" readonly />
+            <button class="copy-btn" data-target="high-field" disabled>Copy command</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modifier">
+        <span class="modifier-label">Modifier:</span>
+        <span id="modifier-value" class="modifier-value">—</span>
+      </div>
+
+      <fieldset class="selection" disabled>
+        <legend>Which sensitivity felt better?</legend>
+        <label class="option">
+          <input type="radio" name="choice" value="low" />
+          <span>Low felt better</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="choice" value="high" />
+          <span>High felt better</span>
+        </label>
+      </fieldset>
+
+      <div class="actions">
+        <button id="continue-btn" class="primary" disabled>Continue</button>
+        <button id="finish-btn" class="accent" disabled>Finish</button>
+      </div>
+
+      <p id="status" class="status">Status: Waiting to start.</p>
+    </section>
+
+    <section class="card info">
+      <h2>How to use</h2>
+      <ol>
+        <li>Enter your starting sensitivity above and click <strong>Start</strong>.</li>
+        <li>Copy a suggested sensitivity, paste it into CS:GO (the command is copied with it), and test it while keeping your crosshair on a fixed target.</li>
+        <li>Choose whether the low or high option felt better and click <strong>Continue</strong>. The modifiers tighten over time for finer adjustments.</li>
+        <li>Repeat until neither option feels noticeably different, then click <strong>Finish</strong> to copy the final value.</li>
+      </ol>
+      <p class="credit">Inspired by the original desktop tool by Manl400 based on /u/mr_sneakyTV&apos;s guide.</p>
+    </section>
+  </main>
+
+  <template id="toast-template">
+    <div class="toast" role="status"></div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
